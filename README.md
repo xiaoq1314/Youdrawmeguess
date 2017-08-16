@@ -1,13 +1,14 @@
-# Paint Online
+# 你画我猜
+这是基于nodeJs的一个H5游戏项目
 
-https://gold.xitu.io/entry/575cced3128fe10068439874
 
-https://github.com/moyuyc/paint_online
+### 执行方法
 
-[Demo](http://moyuyc.xyz:4001/)
+<pre>
+在本地安装好node环境后，进入server文件夹下执行server.js文件
+	
 
-    npm install
+</pre>
 
-    node server/server.js
 
-    http://localhost:4001/
+
