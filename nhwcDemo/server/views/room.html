@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="apple-touch-fullscreen" content="YES" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="pragram" content="no-cache" />
+	<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+	<title>你画我猜</title>
+	<link rel="stylesheet" href="../media/css/index.css">
+</head>
+<body>
+	<header>
+		<div class="header_left">
+			<div class="small_name">时间</div>
+			<div class="time" id="time">--</div>
+		</div>
+		<div class="header_right">
+			<div class="setting" id="clear">
+				清空<i class="clear_icon"></i>
+			</div>
+		</div>
+		<div class="header_center">
+			<div class="small_name">你画我猜</div>
+			<div class="tips" id="word">4399房间</div>
+		</div>
+	</header>
+	<section class="ss_room">
+		<ul class="room_member">
+			
+		</ul>
+		<div class="ready_btn_wrap">
+			<div class="ripple ripple1">
+				<div class="ripple ripple2">
+					<div class="ripple ripple3">
+						<a class="ready_btn">准备</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="extra_btns_wrap">
+			<a class="fl invite_btn">邀请</a>
+			<a class="fr exit_btn">退出</a>
+		</div>
+	</section>
+	<session class="ss_game">
+		<div class="canvas">
+			<canvas id="mycanvas"></canvas>
+			<div class="paint_box disable">
+				<div class="show_btn"><i class="icon paint_icon"></i></div>
+				<ul>
+					<li>
+						<p class="tool_name">工具</p>
+						<ul class="tool">
+							<li id="pencil"><i class="icon pencil_icon"></i></li>
+							<li id="eraser"><i class="icon eraser_icon"></i></li>
+							<li id="clear"><i class="icon clear_icon"></i></li>
+						</ul>
+					</li>
+					<li>
+						<p class="tool_name">粗细</p>
+						<ul class="thickness">
+							<li id="thin"><span class="thickness_name">细</span></li>
+							<li class="active" id="middle"><span class="thickness_name">中</span></li>
+							<li id="thick"><span class="thickness_name">粗</span></li>
+						</ul>
+					</li>
+					<li>
+						<p class="tool_name">颜色</p>
+						<ul class="choose_color">
+							<li><span class="color color-black"></span></li>
+							<li><span class="color color-white"></span></li>
+							<li><span class="color color-yellow"></span></li>
+							<li><span class="color color-green"></span></li>
+							<li><span class="color color-red"></span></li>
+							<li><span class="color color-blue"></span></li>
+							<li><span class="color color-pink"></span></li>
+							<li><span class="color color-orange"></span></li>
+						</ul>
+					</li>
+				</ul>
+				
+			</div>
+			<div class="answer_btn">抢答</div>
+		</div>	
+
+		<div class="player">
+			<ul id="users">
+			</ul>
+		</div>
+	</session>
+	<div class="dialog">
+		<ul id="msg">
+			<li><span class="name">法官：</span><span>准备开始啦</span></li>
+		</ul>
+	</div>
+	<div class="input_box" id="chatPart">
+		<div class="disable_chat">画图者不能参与聊天</div>
+		<span class="vioce fl"><i class="emoji_icon"></i></span>
+		<input type="text" id="iptMsg">
+		<a id="sendMsg">发送</a>
+		<span class="more fr" id="btn-in" style="width: 0;height: 0;"><i class="more_icon"></i></span>
+		<span class="emoji fr" id="btn-autoin" style="width: 0;height: 0;"><i class="emoji_icon"></i></span>
+	</div>
+	<div class="popup">
+		<div class="pop answer_box">
+			<div class="close close_icon"></div>
+			<p class="tips">3个字</p>
+			<input type="text" id="answer">
+			<button id="confirm">确定</button>
+		</div>
+		<div class="pop result_box">
+			<!-- <div class="close close_icon"></div> -->
+			<p class="answer_word">XXX</p>
+			<img id="result_img" src="" alt=""/>
+		</div>
+		<div class="pop words_box">
+			<p class="pop_title">请选择词汇</p>
+			<ul class="word_list">
+				<li data-wordid='0'>候车室</li>
+				<li data-wordid='1'>商场</li>
+				<li data-wordid='2'>婴儿</li>
+				<li data-wordid='3'>什么五个字</li>
+			</ul>
+		</div>
+		<div class="layer"></div>
+	</div>
+	<!-- <script type="text/javascript" src="http://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=2.5.2"></script> -->
+    <script src="socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="media/js/zepto.min.js"></script>
+	<script type="text/javascript" src="media/js/main.js"></script>
+</body>
+</html>
